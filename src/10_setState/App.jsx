@@ -2,7 +2,7 @@
  * @Author: Crayon 3037686283@qq.com
  * @Date: 2023-06-25 22:24:46
  * @LastEditors: Crayon 3037686283@qq.com
- * @LastEditTime: 2023-06-25 22:31:05
+ * @LastEditTime: 2023-06-25 22:40:21
  * @FilePath: \react\1_a_react\02_scaffold\01_learn_scaffold\src\10_setState\App.jsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -24,6 +24,8 @@ export class App extends Component {
     // 两种情况:
     // 组件生命周期或者React合成事件中,setState是异步
     // setTimeout或者原生DOM事件中，setState是同步
+
+    // React18之后可以使用flushSync改成同步执行
     setTimeout(() => {
       this.setState({ message: 'AAA' })
       console.log(this.state.message)
