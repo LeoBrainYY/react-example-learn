@@ -2,7 +2,7 @@
  * @Author: Crayon 3037686283@qq.com
  * @Date: 2023-06-30 19:09:00
  * @LastEditors: Crayon 3037686283@qq.com
- * @LastEditTime: 2023-07-01 15:52:20
+ * @LastEditTime: 2023-07-05 10:42:54
  * @FilePath: \react\1_a_react\02_scaffold\01_learn_scaffold\src\13_ref\App.jsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -47,6 +47,8 @@ export class App extends PureComponent {
   render() {
     return (
       <div>
+        {/* 函数式组件不能直接传递ref 而且ref属性不会被传递到props中 */}
+        {/* 所以使用forwardRef包裹 */}
         <HelloWorld ref={this.HelloWorldRef}></HelloWorld>
         <button onClick={() => this.getComponent()}>获取组件</button>
       </div>

@@ -2,11 +2,11 @@
  * @Author: Crayon 3037686283@qq.com
  * @Date: 2023-07-01 15:54:11
  * @LastEditors: Crayon 3037686283@qq.com
- * @LastEditTime: 2023-07-04 17:58:54
+ * @LastEditTime: 2023-07-04 17:48:27
  * @FilePath: \react\1_a_react\02_scaffold\01_learn_scaffold\src\14_control_component\App.jsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import React, { PureComponent, createRef } from 'react'
+import React, { PureComponent } from 'react'
 
 
 
@@ -36,15 +36,8 @@ export class App extends PureComponent {
         }
       ],
       // fruit: 'orange',
-      fruit: ['orange'],
-      intro: 'personnal info'
+      fruit: ['orange']
     }
-
-    this.introRef = createRef()
-  }
-
-  componentDidMount () {
-    // this.introRef.current.addEventListener
   }
 
   handleUsernameChange (event) {
@@ -61,9 +54,6 @@ export class App extends PureComponent {
 
     console.log('hobbies', this.state.hobbies.filter(item => item.isChecked))
 
-
-    // 获取非受控组件输入信息
-    console.log(this.introRef.current.value)
     // 3.将数据传递给服务器
   }
 
@@ -120,7 +110,7 @@ export class App extends PureComponent {
   }
 
   render() {
-    const { username, password, isAgree, hobbies, fruit, intro } = this.state
+    const { username, password, isAgree, hobbies, fruit } = this.state
 
     return (
       <div>
@@ -195,9 +185,6 @@ export class App extends PureComponent {
             <option value="orange">orange</option>
             <option value="banana">banana</option>
           </select>
-
-          {/* 非受控组件 */}
-          <input type="text" defaultValue={intro} ref={this.introRef}/>
 
         </form>
       </div>
