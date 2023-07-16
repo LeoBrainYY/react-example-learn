@@ -2,7 +2,7 @@
  * @Author: Crayon 3037686283@qq.com
  * @Date: 2023-07-12 22:02:39
  * @LastEditors: Crayon 3037686283@qq.com
- * @LastEditTime: 2023-07-17 00:45:45
+ * @LastEditTime: 2023-07-17 00:50:50
  * @FilePath: \react\1_a_react\02_scaffold\01_learn_scaffold\src\23_hook\App.jsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,6 +15,7 @@ const App = memo(function App() {
   const [ pending, startTransition ] = useTransition()
 
   function valueChangeHandle (e) {
+    // 在输入的时候 先让输入的值快速显现出来 然后再处理过滤的过程
     startTransition(() => {
       const keyWord = e.target.value
       const filterShownames = nameArray.filter(item => {
